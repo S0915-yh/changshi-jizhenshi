@@ -1,0 +1,80 @@
+<!-- 首页 · 今日反转 -->
+<view class="page" wx:if="{{dailyMyth}}">
+
+  <!-- 报头 -->
+  <view class="masthead">
+    <text class="mast-date serif">{{dateKey}}</text>
+    <text class="mast-title serif">今日反转</text>
+    <text class="mast-sub">大部分人以为是对的，其实不一定</text>
+  </view>
+
+  <view class="rule"></view>
+
+  <!-- 今日翻转大卡 -->
+  <truth-card myth="{{dailyMyth}}" />
+
+  <view class="card-links">
+    <text class="link" bindtap="goDetail" data-id="{{dailyMyth.id}}">查看完整档案 NO.{{dailyNo}}</text>
+  </view>
+
+  <!-- 今日三连问 -->
+  <view class="sec-head">
+    <text class="sec-title">今日三连问</text>
+  </view>
+  <view class="qa-list">
+    <view class="card qa-item fade-up" wx:for="{{triple}}" wx:key="index" wx:for-item="q" wx:for-index="qi">
+      <view class="qa-no serif">问 {{qi + 1}} · 档案 NO.{{q.no}}</view>
+      <view class="qa-label">{{q.label}}</view>
+      <view class="qa-question">{{q.question}}</view>
+      <block wx:if="{{!q.done}}">
+        <view class="qa-btns">
+          <view class="qa-btn" bindtap="onTripleAnswer" data-idx="{{qi}}" data-choice="真">真</view>
+          <view class="qa-btn qa-btn-red" bindtap="onTripleAnswer" data-idx="{{qi}}" data-choice="讹">讹</view>
+        </view>
+        <view class="qa-tip">先判断，再看答案</view>
+      </block>
+      <block wx:else>
+        <view class="qa-verdict {{q.choice === q.answer ? 'ok' : 'no'}}">
+          <text wx:if="{{q.choice === q.answer}}">判断正确。</text>
+          <text wx:else>原来如此——</text>
+        </view>
+        <view class="qa-answer">{{q.myth.truth}}</view>
+        <view class="qa-source">依据：{{q.myth.sourceName}}</view>
+      </block>
+    </view>
+  </view>
+
+  <!-- 最近收录 -->
+  <view class="sec-head">
+    <text class="sec-title">最近收录</text>
+    <text class="sec-more" bindtap="goArchive">进档案馆</text>
+  </view>
+  <view class="recent-list">
+    <view class="card recent-item fade-up" wx:for="{{recent}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+      <view class="recent-head">
+        <text class="file-no serif">NO.{{item.id < 10 ? '00' : (item.id < 100 ? '0' : '')}}{{item.id}}</text>
+        <text class="tag">{{item.category}}</text>
+      </view>
+      <view class="recent-title serif">{{item.title}}</view>
+      <view class="recent-claim">{{item.claim}}</view>
+      <view class="scale">
+        <view class="scale-dot {{di < item.mythScore ? 'on' : ''}}" wx:for="{{[0,1,2,3,4]}}" wx:for-item="di" wx:key="*this"></view>
+        <text class="scale-label">误区指数</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 去拆弹 -->
+  <view class="quiz-entry card" bindtap="goQuiz">
+    <text class="quiz-entry-title serif">拆弹挑战</text>
+    <text class="quiz-entry-sub">五道判断题，测测你的直觉</text>
+    <text class="quiz-entry-go">开始</text>
+  </view>
+
+</view>
+
+<!-- 数据异常兜底 -->
+<view class="empty" wx:else>
+  <text class="empty-mark serif">…</text>
+  <text>档案暂时无法读取，请重启小程序</text>
+</view>

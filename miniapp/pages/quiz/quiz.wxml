@@ -1,0 +1,80 @@
+<!-- 拆弹挑战 -->
+<view class="page">
+
+  <!-- 开场 -->
+  <block wx:if="{{stage === 'intro'}}">
+    <view class="quiz-mast">
+      <text class="quiz-title serif">拆弹挑战</text>
+      <text class="quiz-sub">随机五题，一半是流传说法，一半是真相结论。判断"真"还是"讹"，拆掉每一颗常识哑弹。</text>
+    </view>
+    <view class="card quiz-stat-card" wx:if="{{stats.rounds > 0}}">
+      <text class="sec-title">历史战绩</text>
+      <view class="quiz-stat-row">
+        <text class="quiz-stat-num serif">{{stats.best}} / 5</text>
+        <text class="quiz-stat-label">最佳成绩 · 共 {{stats.rounds}} 轮</text>
+      </view>
+    </view>
+    <view class="quiz-start" bindtap="start">开始挑战</view>
+  </block>
+
+  <!-- 答题 -->
+  <block wx:if="{{stage === 'qa' || stage === 'verdict'}}">
+    <view class="quiz-progress">
+      <text class="file-no serif">{{cur + 1}} / {{questions.length}}</text>
+      <text class="file-no">已拆 {{correctCount}} 颗</text>
+    </view>
+    <view class="rule"></view>
+    <view class="card quiz-q-card fade-up">
+      <text class="d-sec-label">{{questions[cur].label}}</text>
+      <view class="quiz-question">{{questions[cur].question}}</view>
+    </view>
+
+    <block wx:if="{{stage === 'qa'}}">
+      <view class="qa-btns quiz-btns">
+        <view class="qa-btn" bindtap="onAnswer" data-choice="真">真</view>
+        <view class="qa-btn qa-btn-red" bindtap="onAnswer" data-choice="讹">讹</view>
+      </view>
+      <view class="quiz-tip">凭直觉判断，答错也会给足解释</view>
+    </block>
+
+    <!-- 判定：原来如此 -->
+    <block wx:if="{{stage === 'verdict'}}">
+      <view class="quiz-verdict {{isCorrect ? 'ok' : 'no'}}">
+        <block wx:if="{{isCorrect}}"><text>判断正确。这颗哑弹拆除。</text></block>
+        <block wx:else><text>原来如此——你选了"{{choice}}"，答案是"{{questions[cur].answer}}"。</text></block>
+      </view>
+      <view class="card quiz-explain fade-up">
+        <view class="quiz-explain-truth">{{questions[cur].truth}}</view>
+        <view class="quiz-explain-why">要点：{{questions[cur].why}}</view>
+        <view class="quiz-explain-src">依据：{{questions[cur].source}}</view>
+      </view>
+      <view class="quiz-next" bindtap="next" wx:if="{{cur < questions.length - 1}}">下一题</view>
+      <view class="quiz-next quiz-next-red" bindtap="next" wx:else>看成绩</view>
+    </block>
+  </block>
+
+  <!-- 成绩 -->
+  <block wx:if="{{stage === 'result'}}">
+    <view class="quiz-mast">
+      <text class="quiz-title serif">成绩单</text>
+      <text class="quiz-sub">成功拆除 {{correctCount}} / {{questions.length}}，{{correctCount === 5 ? '全数拆除，直觉相当可靠。' : '剩下的那几颗，回档案馆补完档案即可。'}}</text>
+    </view>
+    <view class="quiz-result serif">{{correctCount}} / {{questions.length}}</view>
+    <view class="quiz-result-tag tag tag-red">{{correctCount === 5 ? '全数拆除' : (correctCount >= 3 ? '拆弹中段位' : '仍需修习')}}</view>
+
+    <view class="card quiz-stat-card">
+      <text class="sec-title">累计</text>
+      <view class="quiz-stat-row">
+        <text class="quiz-stat-num serif">{{stats.correct}} / {{stats.answered}}</text>
+        <text class="quiz-stat-label">累计答对 · 最佳 {{stats.best}}/5</text>
+      </view>
+    </view>
+
+    <view class="qa-btns quiz-btns">
+      <view class="qa-btn" bindtap="retry">再来一组</view>
+      <button class="qa-btn qa-btn-red quiz-share" open-type="share">分享成绩</button>
+    </view>
+    <view class="quiz-tip" bindtap="goArchive">去档案馆，翻翻错过的卷宗</view>
+  </block>
+
+</view>

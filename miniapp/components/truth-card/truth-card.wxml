@@ -1,0 +1,27 @@
+<!-- truth-card：3D 翻转档案卡 -->
+<view class="tc-scene" bindtap="onToggle">
+  <view class="tc-card {{flipped ? 'tc-flipped' : ''}}">
+    <!-- 正面：流传说法 -->
+    <view class="tc-face tc-front">
+      <view class="tc-top">
+        <text class="file-no serif">NO.{{myth.id < 10 ? '00' : (myth.id < 100 ? '0' : '')}}{{myth.id}}</text>
+        <text class="tag">{{myth.category}}</text>
+      </view>
+      <view class="tc-title serif">{{myth.title}}</view>
+      <view class="tc-label">流传说法</view>
+      <view class="tc-claim">{{myth.claim}}</view>
+      <view class="tc-hint">轻触，翻面看真相</view>
+    </view>
+    <!-- 背面：真相结论 -->
+    <view class="tc-face tc-back">
+      <view class="tc-top">
+        <text class="file-no serif">NO.{{myth.id < 10 ? '00' : (myth.id < 100 ? '0' : '')}}{{myth.id}}</text>
+        <text class="tag tag-red">真相</text>
+      </view>
+      <view class="tc-label tc-label-red">真相结论</view>
+      <view class="tc-truth">{{myth.truth}}</view>
+      <view class="tc-quote serif">—— {{myth.quote}}</view>
+      <view class="tc-hint">轻触，翻回流传说法</view>
+    </view>
+  </view>
+</view>

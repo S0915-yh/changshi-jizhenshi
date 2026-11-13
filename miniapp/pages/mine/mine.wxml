@@ -1,0 +1,68 @@
+<!-- 我的档案 -->
+<view class="page">
+
+  <!-- 战绩 -->
+  <view class="mine-mast">
+    <text class="mine-title serif">我的档案</text>
+  </view>
+  <view class="card mine-stats">
+    <view class="mine-stat">
+      <text class="mine-num serif">{{favs.length}}</text>
+      <text class="mine-label">收藏</text>
+    </view>
+    <view class="mine-stat-div"></view>
+    <view class="mine-stat">
+      <text class="mine-num serif">{{stats.answered}}</text>
+      <text class="mine-label">已答题</text>
+    </view>
+    <view class="mine-stat-div"></view>
+    <view class="mine-stat">
+      <text class="mine-num serif">{{stats.correct}}</text>
+      <text class="mine-label">答对</text>
+    </view>
+  </view>
+
+  <!-- 收藏列表 -->
+  <view class="sec-head">
+    <text class="sec-title">我的收藏</text>
+    <text class="mine-more" bindtap="goArchive">去档案馆</text>
+  </view>
+  <block wx:if="{{favs.length > 0}}">
+    <view class="card mine-fav-item fade-up" wx:for="{{favs}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+      <view class="mine-fav-head">
+        <text class="file-no serif">NO.{{item.no}}</text>
+        <text class="tag">{{item.category}}</text>
+        <text class="mine-unfav" catchtap="onUnfav" data-id="{{item.id}}">移除</text>
+      </view>
+      <view class="mine-fav-title serif">{{item.title}}</view>
+      <view class="scale">
+        <view class="scale-dot {{di < item.mythScore ? 'on' : ''}}" wx:for="{{[0,1,2,3,4]}}" wx:for-item="di" wx:key="*this"></view>
+        <text class="scale-label">误区指数</text>
+      </view>
+    </view>
+  </block>
+  <view class="empty" wx:else>
+    <text class="empty-mark serif">∅</text>
+    <text>还没有收藏。在档案馆左滑或长按档案卡即可收藏。</text>
+  </view>
+
+  <!-- 关于 -->
+  <view class="sec-head">
+    <text class="sec-title">关于</text>
+  </view>
+  <view class="card mine-about">
+    <view class="mine-about-t">常识急诊室 · 反常识档案馆</view>
+    <view class="mine-about-p">收集"大部分人从小听到大、其实不一定对"的常见误区，逐条给出真相、为什么错、适用条件与权威来源。共 40 份卷宗，五大科室。</view>
+    <view class="rule"></view>
+    <view class="mine-about-t">内容原则</view>
+    <view class="mine-about-p">结论严谨、表述不绝对化；健康类内容为科普参考，不构成医疗建议；不涉及政治、民族、宗教等敏感议题；来源均为公开标准、指南、词典或权威机构名称，不跳转外链。</view>
+    <view class="rule"></view>
+    <view class="mine-about-t">数据说明</view>
+    <view class="mine-about-p">全部数据本地存储，不上传任何个人信息；清除本地数据后不可恢复。观点以权威机构最新发布为准。</view>
+  </view>
+
+  <!-- 清除数据 -->
+  <view class="mine-clear" bindtap="onClear">清除本地数据</view>
+  <view class="mine-ver serif">Common Sense ER · 2026</view>
+
+</view>

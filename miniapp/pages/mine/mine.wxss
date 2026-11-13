@@ -1,0 +1,113 @@
+/* 我的档案 */
+
+.mine-mast {
+  padding: 16rpx 0 8rpx;
+}
+
+.mine-title {
+  font-size: 56rpx;
+  font-weight: bold;
+  letter-spacing: 4rpx;
+  color: #1F1F1D;
+}
+
+.mine-stats {
+  display: flex;
+  align-items: center;
+  padding: 36rpx 24rpx;
+}
+
+.mine-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mine-num {
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #1F1F1D;
+}
+
+.mine-label {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #8A857C;
+  letter-spacing: 2rpx;
+}
+
+.mine-stat-div {
+  width: 1rpx;
+  height: 56rpx;
+  background: #D9D2C3;
+}
+
+.mine-more {
+  font-size: 24rpx;
+  color: #8A857C;
+}
+
+.mine-fav-item {
+  margin-bottom: 20rpx;
+}
+
+.mine-fav-head {
+  display: flex;
+  align-items: center;
+}
+
+.mine-fav-head .tag {
+  margin-left: 16rpx;
+}
+
+.mine-unfav {
+  margin-left: auto;
+  font-size: 22rpx;
+  color: #8A857C;
+  padding: 4rpx 8rpx;
+}
+
+.mine-fav-title {
+  margin-top: 12rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1F1F1D;
+}
+
+.mine-fav-item .scale {
+  margin-top: 18rpx;
+}
+
+.mine-about-t {
+  font-size: 28rpx;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+  color: #1F1F1D;
+}
+
+.mine-about-p {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #8A857C;
+  line-height: 1.7;
+}
+
+.mine-clear {
+  margin-top: 48rpx;
+  text-align: center;
+  font-size: 26rpx;
+  letter-spacing: 2rpx;
+  color: #8A857C;
+  border: 1rpx solid #D9D2C3;
+  border-radius: 12rpx;
+  padding: 18rpx 0;
+}
+
+.mine-ver {
+  margin-top: 32rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #D9D2C3;
+  letter-spacing: 4rpx;
+}

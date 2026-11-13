@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/archive/archive",
+    "pages/quiz/quiz",
+    "pages/mine/mine",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "navigationBarTitleText": "常识急诊室",
+    "navigationBarBackgroundColor": "#F7F3EA",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F7F3EA",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#8A857C",
+    "selectedColor": "#C33A2E",
+    "backgroundColor": "#F7F3EA",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "今日" },
+      { "pagePath": "pages/archive/archive", "text": "档案馆" },
+      { "pagePath": "pages/quiz/quiz", "text": "拆弹" },
+      { "pagePath": "pages/mine/mine", "text": "我的" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

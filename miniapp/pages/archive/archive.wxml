@@ -1,0 +1,57 @@
+<!-- 档案馆 · 误区档案 -->
+<view class="page">
+
+  <!-- 搜索 -->
+  <view class="search-bar">
+    <input class="search-input" value="{{keyword}}" bindinput="onSearchInput"
+      placeholder="搜索误区关键词" placeholder-class="ph" confirm-type="search" />
+    <text class="search-count" wx:if="{{keyword}}">{{total}} 条</text>
+  </view>
+
+  <!-- 分类筛选 -->
+  <scroll-view class="cat-scroll" scroll-x enable-flex>
+    <view class="cat-chip {{activeCat === item ? 'cat-on' : ''}}"
+      wx:for="{{cats}}" wx:key="*this"
+      bindtap="onCatTap" data-cat="{{item}}">{{item}}</view>
+  </scroll-view>
+
+  <!-- 排序切换 -->
+  <view class="sort-bar">
+    <text class="file-no serif">共 {{total}} 份卷宗</text>
+    <text class="sort-btn" bindtap="onSortToggle">{{sortMode === 'score' ? '按误区指数排序' : '按编号排序'}}</text>
+  </view>
+
+  <!-- 档案列表 -->
+  <view class="arch-list" wx:if="{{shown.length > 0}}">
+    <view class="card arch-item fade-up"
+      wx:for="{{shown}}" wx:key="id"
+      bindtap="goDetail" data-id="{{item.id}}"
+      bindtouchstart="onTouchStart" bindtouchend="onTouchEnd"
+      bindlongpress="onLongPress">
+      <view class="arch-head">
+        <text class="file-no serif">NO.{{item.no}}</text>
+        <text class="tag">{{item.category}}</text>
+        <text class="arch-fav {{item.fav ? 'fav-on' : ''}}">{{item.fav ? '已收藏' : '左滑收藏'}}</text>
+      </view>
+      <view class="arch-title serif">{{item.title}}</view>
+      <view class="arch-claim">{{item.claim}}</view>
+      <view class="scale">
+        <view class="scale-dot {{di < item.mythScore ? 'on' : ''}}" wx:for="{{[0,1,2,3,4]}}" wx:for-item="di" wx:key="*this"></view>
+        <text class="scale-label">误区指数</text>
+      </view>
+    </view>
+    <view class="load-more" wx:if="{{shown.length < total}}">
+      <text class="file-no">上拉加载更多</text>
+    </view>
+    <view class="load-more" wx:else>
+      <text class="file-no">—— 档案到此页 ——</text>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:else>
+    <text class="empty-mark serif">∅</text>
+    <text>没有匹配的档案。换个关键词试试。</text>
+  </view>
+
+</view>

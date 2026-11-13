@@ -1,0 +1,105 @@
+/* truth-card —— 翻牌 320ms，缓动自然；不弹跳、不夸张 */
+
+.tc-scene {
+  perspective: 1600rpx;
+}
+
+.tc-card {
+  position: relative;
+  width: 100%;
+  height: 520rpx;
+  transform-style: preserve-3d;
+  transition: transform 320ms cubic-bezier(0.25, 0.8, 0.35, 1);
+}
+
+.tc-flipped {
+  transform: rotateY(180deg);
+}
+
+.tc-face {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 36rpx;
+  border-radius: 16rpx;
+  border: 1rpx solid #D9D2C3;
+  background: #FBF9F3;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2rpx 8rpx rgba(31, 31, 29, 0.04);
+}
+
+.tc-back {
+  transform: rotateY(180deg);
+  background: #1F1F1D;
+  border-color: #1F1F1D;
+}
+
+.tc-back .file-no {
+  color: rgba(247, 243, 234, 0.55);
+}
+
+.tc-back .tag-red {
+  color: #E4A199;
+  border-color: rgba(228, 161, 153, 0.5);
+}
+
+.tc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tc-title {
+  font-size: 48rpx;
+  line-height: 1.4;
+  margin-top: 20rpx;
+  color: #1F1F1D;
+  font-weight: bold;
+}
+
+.tc-label {
+  margin-top: 28rpx;
+  font-size: 22rpx;
+  letter-spacing: 6rpx;
+  color: #8A857C;
+}
+
+.tc-label-red {
+  color: #E4A199;
+}
+
+.tc-claim {
+  margin-top: 8rpx;
+  font-size: 32rpx;
+  color: #1F1F1D;
+}
+
+.tc-truth {
+  margin-top: 8rpx;
+  font-size: 30rpx;
+  color: #F7F3EA;
+}
+
+.tc-quote {
+  margin-top: auto;
+  font-size: 28rpx;
+  color: rgba(247, 243, 234, 0.75);
+  font-style: italic;
+}
+
+.tc-hint {
+  margin-top: 24rpx;
+  font-size: 22rpx;
+  color: #8A857C;
+  letter-spacing: 2rpx;
+}
+
+.tc-back .tc-hint {
+  color: rgba(247, 243, 234, 0.45);
+}

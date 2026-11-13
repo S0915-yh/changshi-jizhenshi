@@ -1,0 +1,139 @@
+/* ============================================================
+   app.wxss —— 常识急诊室 · 全局视觉系统
+   设计关键词：纸感、墨色、朱红、档案编号、细线网格、展签排版
+   色板：纸白 #F7F3EA / 墨黑 #1F1F1D / 朱红 #C33A2E / 暖灰 #8A857C / 细线 #D9D2C3
+   ============================================================ */
+
+page {
+  background: #F7F3EA;
+  color: #1F1F1D;
+  font-size: 30rpx;
+  line-height: 1.7;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+}
+
+/* ---------- 通用容器：8pt 网格，页面左右 40rpx ---------- */
+.page {
+  min-height: 100vh;
+  padding: 24rpx 40rpx calc(40rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+/* ---------- 衬线大标题（系统 serif） ---------- */
+.serif {
+  font-family: Georgia, "Times New Roman", "Songti SC", "STSong", serif;
+}
+
+/* ---------- 卡片：圆角 16rpx，阴影极克制 ---------- */
+.card {
+  background: #FBF9F3;
+  border: 1rpx solid #D9D2C3;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  box-shadow: 0 2rpx 8rpx rgba(31, 31, 29, 0.04);
+}
+
+/* ---------- 档案编号 ---------- */
+.file-no {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+  color: #8A857C;
+}
+
+/* ---------- 标签章（分类） ---------- */
+.tag {
+  display: inline-block;
+  font-size: 22rpx;
+  color: #8A857C;
+  border: 1rpx solid #D9D2C3;
+  border-radius: 6rpx;
+  padding: 2rpx 14rpx;
+  letter-spacing: 2rpx;
+}
+
+.tag-red {
+  color: #C33A2E;
+  border-color: rgba(195, 58, 46, 0.45);
+}
+
+/* ---------- 细分割线 ---------- */
+.rule {
+  height: 1rpx;
+  background: #D9D2C3;
+  margin: 28rpx 0;
+}
+
+/* ---------- 误区指数刻度（5 格） ---------- */
+.scale {
+  display: flex;
+  align-items: center;
+}
+.scale-dot {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  border: 1rpx solid #C33A2E;
+  margin-right: 10rpx;
+}
+.scale-dot.on {
+  background: #C33A2E;
+}
+.scale-label {
+  font-size: 22rpx;
+  color: #8A857C;
+  margin-left: 8rpx;
+}
+
+/* ---------- 章节小标题（编辑部式） ---------- */
+.sec-title {
+  font-size: 24rpx;
+  letter-spacing: 4rpx;
+  color: #8A857C;
+  margin-bottom: 16rpx;
+}
+
+/* ---------- 章节头（左标题 + 右操作） ---------- */
+.sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 48rpx 0 20rpx;
+}
+
+/* ---------- 空状态 ---------- */
+.empty {
+  padding: 96rpx 40rpx;
+  text-align: center;
+  color: #8A857C;
+  font-size: 26rpx;
+}
+.empty-mark {
+  font-family: Georgia, serif;
+  font-size: 40rpx;
+  color: #D9D2C3;
+  display: block;
+  margin-bottom: 16rpx;
+}
+
+/* ---------- 列表进入动效：轻微上浮 ---------- */
+.fade-up {
+  animation: fadeUp 320ms ease-out both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- 朱红印章样式 ---------- */
+.stamp {
+  display: inline-block;
+  color: #C33A2E;
+  border: 3rpx solid #C33A2E;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+  padding: 4rpx 12rpx;
+  letter-spacing: 4rpx;
+  transform: rotate(-6deg);
+  opacity: 0.9;
+}

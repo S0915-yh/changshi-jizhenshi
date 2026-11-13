@@ -1,0 +1,105 @@
+/* 档案馆 · 误区档案 */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #D9D2C3;
+  padding-bottom: 16rpx;
+}
+
+.search-input {
+  flex: 1;
+  font-size: 30rpx;
+  color: #1F1F1D;
+  padding: 12rpx 0;
+}
+
+.ph {
+  color: #8A857C;
+}
+
+.search-count {
+  font-size: 24rpx;
+  color: #8A857C;
+}
+
+.cat-scroll {
+  margin-top: 20rpx;
+  white-space: nowrap;
+  display: flex;
+}
+
+.cat-chip {
+  display: inline-block;
+  font-size: 26rpx;
+  color: #8A857C;
+  border: 1rpx solid #D9D2C3;
+  border-radius: 10rpx;
+  padding: 8rpx 26rpx;
+  margin-right: 16rpx;
+  letter-spacing: 2rpx;
+}
+
+.cat-on {
+  color: #F7F3EA;
+  background: #1F1F1D;
+  border-color: #1F1F1D;
+}
+
+.sort-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24rpx 0 20rpx;
+}
+
+.sort-btn {
+  font-size: 24rpx;
+  color: #C33A2E;
+  letter-spacing: 2rpx;
+}
+
+.arch-item {
+  margin-bottom: 20rpx;
+}
+
+.arch-head {
+  display: flex;
+  align-items: center;
+}
+
+.arch-head .tag {
+  margin-left: 16rpx;
+}
+
+.arch-fav {
+  margin-left: auto;
+  font-size: 22rpx;
+  color: #D9D2C3;
+}
+
+.fav-on {
+  color: #C33A2E;
+}
+
+.arch-title {
+  margin-top: 12rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #1F1F1D;
+}
+
+.arch-claim {
+  margin-top: 8rpx;
+  font-size: 28rpx;
+  color: #8A857C;
+}
+
+.arch-item .scale {
+  margin-top: 20rpx;
+}
+
+.load-more {
+  text-align: center;
+  padding: 24rpx 0;
+}

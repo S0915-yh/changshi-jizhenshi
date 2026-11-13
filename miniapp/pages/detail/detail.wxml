@@ -1,0 +1,89 @@
+<!-- 档案详情页 -->
+<view class="page" wx:if="{{m}}">
+
+  <!-- 卷宗头 -->
+  <view class="file-head">
+    <text class="file-no serif">档案 NO.{{no}}</text>
+    <text class="tag">{{m.category}}</text>
+  </view>
+  <view class="d-title serif">{{m.title}}</view>
+
+  <view class="scale d-scale">
+    <view class="scale-dot {{di < m.mythScore ? 'on' : ''}}" wx:for="{{[0,1,2,3,4]}}" wx:for-item="di" wx:key="*this"></view>
+    <text class="scale-label">误区指数</text>
+  </view>
+
+  <view class="rule"></view>
+
+  <!-- 流传版本 -->
+  <view class="card d-claim-card">
+    <view class="d-claim-head">
+      <text class="d-sec-label">流传版本</text>
+      <text class="stamp">讹</text>
+    </view>
+    <view class="d-claim">{{m.claim}}</view>
+  </view>
+
+  <!-- 真相（点击翻面展开） -->
+  <view class="card d-truth-card {{revealed ? 'revealed' : ''}}" bindtap="onReveal">
+    <block wx:if="{{!revealed}}">
+      <text class="d-sec-label">真相结论</text>
+      <text class="d-flip-hint">轻触，翻面看真相</text>
+    </block>
+    <block wx:else>
+      <text class="d-sec-label d-label-red">真相结论</text>
+      <view class="d-truth">{{m.truth}}</view>
+      <view class="d-quote serif">—— {{m.quote}}</view>
+    </block>
+  </view>
+
+  <!-- 为什么错 -->
+  <view class="card">
+    <text class="d-sec-label">为什么错</text>
+    <view class="d-why" wx:for="{{m.whyWrong}}" wx:key="index" wx:for-item="w" wx:for-index="wi">
+      <text class="d-why-no serif">{{wi < 9 ? '0' : ''}}{{wi + 1}}</text>
+      <text class="d-why-text">{{w}}</text>
+    </view>
+  </view>
+
+  <!-- 适用条件 -->
+  <view class="card">
+    <text class="d-sec-label">适用条件</text>
+    <view class="d-cond">{{m.conditions}}</view>
+  </view>
+
+  <!-- 来源 -->
+  <view class="card">
+    <text class="d-sec-label">权威来源</text>
+    <view class="d-source">{{m.sourceName}}</view>
+    <view class="d-disclaim">科普参考，不构成医疗建议。</view>
+  </view>
+
+  <!-- 操作：收藏 / 分享 -->
+  <view class="d-actions">
+    <view class="d-btn" bindtap="onFav">{{fav ? '取消收藏' : '收藏档案'}}</view>
+    <button class="d-btn d-btn-share" open-type="share">分享</button>
+  </view>
+
+  <!-- 相关误区 -->
+  <view class="sec-head">
+    <text class="sec-title">相关误区</text>
+  </view>
+  <view class="d-related" wx:if="{{related.length > 0}}">
+    <view class="card d-rel-item fade-up" wx:for="{{related}}" wx:key="id" bindtap="goDetail" data-id="{{item.id}}">
+      <view class="d-rel-head">
+        <text class="file-no serif">NO.{{item.no}}</text>
+        <text class="tag">{{item.category}}</text>
+      </view>
+      <view class="d-rel-title serif">{{item.title}}</view>
+    </view>
+  </view>
+
+</view>
+
+<!-- 档案不存在兜底 -->
+<view class="empty" wx:else>
+  <text class="empty-mark serif">∅</text>
+  <text>找不到这份档案，可能已被移除。</text>
+  <text class="empty-back" bindtap="goBack">返回档案馆</text>
+</view>

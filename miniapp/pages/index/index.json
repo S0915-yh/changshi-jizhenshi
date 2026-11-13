@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "常识急诊室",
+  "usingComponents": {
+    "truth-card": "/components/truth-card/truth-card"
+  }
+}
