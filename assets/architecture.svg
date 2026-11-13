@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1170" height="520" viewBox="0 0 1170 520">
+  <!-- ============ 架构图：一份数据，两种形态 ============ -->
+  <rect width="1170" height="520" fill="#F7F3EA"/>
+
+  <text x="585" y="44" text-anchor="middle" font-family="Songti SC, SimSun, serif" font-size="26" font-weight="bold" letter-spacing="6" fill="#1F1F1D">作品架构 · 一份卷宗库，两种交付形态</text>
+  <line x1="380" y1="60" x2="790" y2="60" stroke="#D9D2C3" stroke-width="1.5"/>
+
+  <!-- ============ 顶层：用户 ============ -->
+  <rect x="465" y="82" width="240" height="52" rx="8" fill="#1F1F1D"/>
+  <text x="585" y="114" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="17" fill="#F7F3EA">用户 · 大学生新生</text>
+
+  <line x1="470" y1="108" x2="415" y2="168" stroke="#8A857C" stroke-width="1.5"/>
+  <line x1="700" y1="108" x2="755" y2="168" stroke="#8A857C" stroke-width="1.5"/>
+
+  <!-- ============ 左：微信小程序 ============ -->
+  <rect x="120" y="170" width="330" height="230" rx="14" fill="#FFFFFF" stroke="#1F1F1D" stroke-width="2"/>
+  <rect x="120" y="170" width="330" height="44" rx="14" fill="#1F1F1D"/>
+  <text x="285" y="199" text-anchor="middle" font-family="Songti SC, serif" font-size="18" fill="#F7F3EA">微信小程序 · miniapp/</text>
+
+  <g font-family="PingFang SC, sans-serif" font-size="14.5" fill="#1F1F1D">
+    <rect x="142" y="232" width="140" height="40" rx="6" fill="#F7F3EA" stroke="#D9D2C3"/>
+    <text x="212" y="257" text-anchor="middle">今日反转 · 翻牌</text>
+    <rect x="292" y="232" width="140" height="40" rx="6" fill="#F7F3EA" stroke="#D9D2C3"/>
+    <text x="362" y="257" text-anchor="middle">误区档案 · 检索</text>
+    <rect x="142" y="282" width="140" height="40" rx="6" fill="#F7F3EA" stroke="#D9D2C3"/>
+    <text x="212" y="307" text-anchor="middle">拆弹挑战 · 答题</text>
+    <rect x="292" y="282" width="140" height="40" rx="6" fill="#F7F3EA" stroke="#D9D2C3"/>
+    <text x="362" y="307" text-anchor="middle">我的档案 · 收藏</text>
+    <rect x="142" y="332" width="290" height="40" rx="6" fill="#FDF6F0" stroke="#C33A2E" stroke-width="1.2"/>
+    <text x="287" y="357" text-anchor="middle" fill="#C33A2E">卷宗详情 · truth-card 翻牌组件</text>
+  </g>
+
+  <!-- ============ 右：WorkBuddy 技能 ============ -->
+  <rect x="720" y="170" width="330" height="230" rx="14" fill="#FFFFFF" stroke="#1F1F1D" stroke-width="2"/>
+  <rect x="720" y="170" width="330" height="44" rx="14" fill="#C33A2E"/>
+  <text x="885" y="199" text-anchor="middle" font-family="Songti SC, serif" font-size="18" fill="#F7F3EA">WorkBuddy 技能 · SKILL.md</text>
+
+  <g font-family="PingFang SC, sans-serif" font-size="14.5" fill="#1F1F1D">
+    <rect x="742" y="232" width="140" height="40" rx="6" fill="#F7F3EA" stroke="#D9D2C3"/>
+    <text x="812" y="257" text-anchor="middle">急诊挂号 · 验证</text>
+    <rect x="892" y="232" width="140" height="40" rx="6" fill="#F7F3EA" stroke="#D9D2C3"/>
+    <text x="962" y="257" text-anchor="middle">今日翻牌 · 每日一误</text>
+    <rect x="742" y="282" width="140" height="40" rx="6" fill="#F7F3EA" stroke="#D9D2C3"/>
+    <text x="812" y="307" text-anchor="middle">分类巡诊 · 浏览</text>
+    <rect x="892" y="282" width="140" height="40" rx="6" fill="#F7F3EA" stroke="#D9D2C3"/>
+    <text x="962" y="307" text-anchor="middle">拆弹挑战 · 测验</text>
+    <rect x="742" y="332" width="290" height="40" rx="6" fill="#FDF6F0" stroke="#C33A2E" stroke-width="1.2"/>
+    <text x="887" y="357" text-anchor="middle" fill="#C33A2E">科普二次创作 · 值班纪律红线</text>
+  </g>
+
+  <!-- ============ 底层：数据 ============ -->
+  <line x1="285" y1="400" x2="435" y2="440" stroke="#8A857C" stroke-width="1.5"/>
+  <line x1="885" y1="400" x2="735" y2="440" stroke="#8A857C" stroke-width="1.5"/>
+
+  <rect x="390" y="440" width="390" height="56" rx="10" fill="#1F1F1D"/>
+  <text x="585" y="464" text-anchor="middle" font-family="Courier New, monospace" font-size="15" fill="#F7F3EA">data/myths.json · 40 份卷宗</text>
+  <text x="585" y="486" text-anchor="middle" font-family="PingFang SC, sans-serif" font-size="13" fill="#D9D2C3">说法 / 真相 / 为什么错 / 适用边界 / 来源 / 误区指数 / 批注</text>
+</svg>

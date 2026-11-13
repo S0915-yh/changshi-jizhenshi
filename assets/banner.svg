@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1170" height="300" viewBox="0 0 1170 300">
+  <!-- ============ 常识急诊室 · 英雄横幅（档案编辑部风） ============ -->
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#D9D2C3" stroke-width="0.6" opacity="0.55"/>
+    </pattern>
+  </defs>
+
+  <!-- 纸底 -->
+  <rect width="1170" height="300" fill="#F7F3EA"/>
+  <rect width="1170" height="300" fill="url(#grid)"/>
+
+  <!-- 顶/底细线 -->
+  <rect x="0" y="14" width="1170" height="3" fill="#1F1F1D"/>
+  <rect x="0" y="283" width="1170" height="3" fill="#1F1F1D"/>
+
+  <!-- 档案编号（右上） -->
+  <text x="1120" y="52" text-anchor="end" font-family="Courier New, monospace" font-size="15" letter-spacing="3" fill="#8A857C">ARCHIVE NO. 001–040</text>
+  <text x="1120" y="74" text-anchor="end" font-family="Songti SC, SimSun, serif" font-size="15" letter-spacing="6" fill="#8A857C">卷宗编号 · 共四十份</text>
+
+  <!-- 朱红印章（右中，轻微旋转） -->
+  <g transform="rotate(-6 985 165)">
+    <rect x="940" y="118" width="92" height="92" fill="#C33A2E" rx="8"/>
+    <text x="986" y="158" text-anchor="middle" font-family="Songti SC, SimSun, serif" font-size="30" font-weight="bold" fill="#F7F3EA">急诊</text>
+    <text x="986" y="194" text-anchor="middle" font-family="Songti SC, SimSun, serif" font-size="22" fill="#F7F3EA">存档</text>
+  </g>
+
+  <!-- 主标题 -->
+  <text x="88" y="132" font-family="Songti SC, SimSun, serif" font-size="66" font-weight="bold" letter-spacing="10" fill="#1F1F1D">常识急诊室</text>
+
+  <!-- 英文副题 -->
+  <text x="92" y="170" font-family="Georgia, serif" font-size="21" letter-spacing="2.5" fill="#8A857C">COMMON SENSE ER · The Museum of Misconceptions</text>
+
+  <!-- 中文定位 -->
+  <text x="92" y="216" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="19" fill="#1F1F1D">大学生防忽悠与反常识档案馆 —— 大多数人从小听到大，但其实错了的常识，逐条给出真相与依据</text>
+
+  <!-- 标签章一排 -->
+  <g font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="14">
+    <rect x="92" y="238" width="118" height="30" fill="none" stroke="#C33A2E" stroke-width="1.4" rx="4"/>
+    <text x="151" y="258" text-anchor="middle" fill="#C33A2E">五科室 · 八卷宗</text>
+    <rect x="224" y="238" width="118" height="30" fill="none" stroke="#8A857C" stroke-width="1.2" rx="4"/>
+    <text x="283" y="258" text-anchor="middle" fill="#8A857C">误区指数 ★1–5</text>
+    <rect x="356" y="238" width="150" height="30" fill="none" stroke="#8A857C" stroke-width="1.2" rx="4"/>
+    <text x="431" y="258" text-anchor="middle" fill="#8A857C">每条附权威来源</text>
+    <rect x="520" y="238" width="150" height="30" fill="none" stroke="#8A857C" stroke-width="1.2" rx="4"/>
+    <text x="595" y="258" text-anchor="middle" fill="#8A857C">科普参考 · 不绝对化</text>
+  </g>
+</svg>
